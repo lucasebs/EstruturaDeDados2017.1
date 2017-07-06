@@ -2,8 +2,8 @@
 Resoluções da disciplina de Estrutura de Dados no período 2017.1 - Telemática - IFPB
 # 
 # Conteúdos: 
-  Lista 1
-   - Python;
+  - Lista 1
+   - - Python;
     - Atribuições;
     - Estruturas de Decisão;
     - Estruturas de Repetição;
@@ -11,4 +11,4 @@ Resoluções da disciplina de Estrutura de Dados no período 2017.1 - Telemátic
     - Listas;
     - Dicionários;
     - Tuplas;
-   - Tipo Abstrato de Dados;
+   - - Tipo Abstrato de Dados;
