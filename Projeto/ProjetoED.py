@@ -7,7 +7,7 @@ c1 = Concessionaria()
 while True: 
 	print(menu())
 	seleciona_menu(captura_menu(), c1)
-	parada = input()
+	parada = int(input())
 	if (parada == -1):
 		break
 

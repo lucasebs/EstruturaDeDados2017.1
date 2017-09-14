@@ -7,7 +7,7 @@ class Veiculos(object):
 	def __init__(self):
 		self.referencia = None
 
-	def esta_vazia():
+	def esta_vazia(self):
 		return self.referencia is None
 
 

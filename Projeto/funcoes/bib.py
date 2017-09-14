@@ -14,7 +14,7 @@ def captura_menu():
 	return op
 
 def seleciona_menu(op, c):
-	opcoes.get(op)(c)
+	opcoes[op](c)
 
 		
 def busca_veiculo(c):
@@ -48,5 +48,5 @@ def atualiza_arquivo(self):
 	arq.write(self.veiculos.listar)
 	arq.close()
 
-opcoes = {1 : busca_veiculo, 2 : adiciona_veiculo, 3 : remove_veiculo}
+opcoes = {'1' : busca_veiculo, '2' : adiciona_veiculo, '3' : remove_veiculo}
 
