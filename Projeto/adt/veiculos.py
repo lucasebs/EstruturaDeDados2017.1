@@ -1,4 +1,4 @@
-from carro import Carro
+from no_vclo import No_vclo
 from veiculo import Veiculo
 
 
@@ -18,7 +18,7 @@ class Veiculos(object):
 		temp = self.referencia
 
 		while temp is not None:
-			print(Veiculo.info_veiculo)
+			print(temp.info_veiculo)
 			temp = temp.proximo_veiculo
 
 	def remover(self, chassi)
@@ -36,9 +36,9 @@ class Veiculos(object):
 			vclo_anterior.proximo_veiculo = vclo_corrente.proximo_veiculo
 			vclo_corrente.proximo_veiculo = None
 
-	def adicionar(self, vclo_obj, chassi, nome, ano, marca, preco):
-		novo_vclo = Veiculo()
-		novo_vclo.info_veiculo = Carro(chassi, nome, ano, marca, preco)
+	def adicionar(self, chassi, nome, ano, marca, preco):
+		novo_vclo = No_vclo()
+		novo_vclo.info_veiculo = Veiculo(chassi, nome, ano, marca, preco)
 
 		if self.esta_vazia():
 			self.referencia = novo_vclo
@@ -50,3 +50,15 @@ class Veiculos(object):
 			temp = temp.proximo_veiculo
 
 		temp.proximo_veiculo = novo_vclo
+
+	def buscar(self, chassi):
+		if self.esta_vazia()
+			return "Sem veículos na concessionária!"
+
+		temp = self.referencia
+
+		while (temp is not None and temp.info_veiculo.chassi != chassi):
+			temp = temp.proximo_veiculo
+
+		return temp.info_veiculo	
+			
