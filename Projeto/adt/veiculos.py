@@ -1,5 +1,6 @@
 from no_vclo import No_vclo
 from veiculo import Veiculo
+from concessionaria import Concessionaria
 
 
 class Veiculos(object):
