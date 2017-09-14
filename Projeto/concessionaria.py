@@ -27,6 +27,5 @@ class Concessionaria():
 	def remove_veiculo():
 		print("---- REMOVER VEÍCULO ------\n")
 		chassi = input("- Nº do Chassi do Veículo -\n")
-		self.veiculos.buscar(chassi)
-		print("Informações do Veículo:\n")
-		print(veiculo)
+		self.veiculos.remover(chassi)
+
