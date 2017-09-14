@@ -1,4 +1,4 @@
-from veiculos import Veiculos
+from .veiculos import Veiculos
 from funcoes.bib import *
 
 class Concessionaria():

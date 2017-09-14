@@ -1,15 +1,14 @@
-from no_vclo import No_vclo
-from veiculo import Veiculo
-from concessionaria import Concessionaria
+from .no_vclo import No_vclo
+from .veiculo import Veiculo
 
 
 class Veiculos(object):
 	"""docstring for Veiculos"""
 	def __init__(self):
-        self.referencia = None
+		self.referencia = None
 
-    def esta_vazia():
-    	return self.referencia is None:
+	def esta_vazia():
+		return self.referencia is None
 
 
 	def listar(self):
@@ -25,7 +24,7 @@ class Veiculos(object):
 				print("-------------------------------")
 
 
-	def remover(self, chassi)
+	def remover(self, chassi):
 		if self.esta_vazia():
 			return "Sem veículos na concessionária!"
 
@@ -56,7 +55,7 @@ class Veiculos(object):
 		temp.proximo_veiculo = novo_vclo
 
 	def buscar(self, chassi):
-		if self.esta_vazia()
+		if self.esta_vazia():
 			return "Sem veículos na concessionária!"
 
 		temp = self.referencia

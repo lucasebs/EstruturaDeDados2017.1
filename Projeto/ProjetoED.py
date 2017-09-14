@@ -4,9 +4,13 @@ from adt.concessionaria import Concessionaria
 
 c1 = Concessionaria()
 
-print(menu())
+while True: 
+	print(menu())
+	seleciona_menu(captura_menu(), c1)
+	parada = input()
+	if (parada == -1):
+		break
 
 
-pritn(c1.quantidade_veiculos)
 
 
