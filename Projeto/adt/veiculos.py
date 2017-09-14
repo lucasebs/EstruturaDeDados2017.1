@@ -20,6 +20,9 @@ class Veiculos(object):
 		while temp is not None:
 			print(temp.info_veiculo)
 			temp = temp.proximo_veiculo
+			if temp is not None:
+				print("-------------------------------")
+
 
 	def remover(self, chassi)
 		if self.esta_vazia():
