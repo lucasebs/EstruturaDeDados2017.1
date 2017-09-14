@@ -16,13 +16,15 @@ class Veiculos(object):
 			return
 
 		temp = self.referencia
+		result = ''
 
 		while temp is not None:
-			print(temp.info_veiculo)
+			result += str(temp.info_veiculo)
 			temp = temp.proximo_veiculo
 			if temp is not None:
-				print("-------------------------------")
+				result +="-------------------------------\n"
 
+		return result
 
 	def remover(self, chassi):
 		if self.esta_vazia():
