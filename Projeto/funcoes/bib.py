@@ -127,7 +127,7 @@ def captura_entrada(c, op):
 	Returns: 
 		chassi (int) : Retorna um numero do chassi lido da entrada 
 			padrao 
-		(chassi, nome, ano, marca, preco) (tupla ) : Retorna uma tupla
+		(chassi, nome, ano, marca, preco) (tupla) : Retorna uma tupla
 			com dados lidos na entrada padrao 
 		True (bool) : Retorna valor booleano se veiculo já tiver sido
 			registrado na concessionaria
