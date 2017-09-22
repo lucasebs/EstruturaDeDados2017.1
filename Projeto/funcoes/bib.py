@@ -166,6 +166,14 @@ def captura_entrada(c, op):
 		return (chassi, nome, ano, marca, preco)		
 
 def imprime_veiculo(veiculo):
+	'''
+	Function: 
+		imprime_veiculo : Exibe na tela informacoes recebidas como parametro
+	Attributes: 
+		@param (veiculo) (str) : 
+	'''
+	# Verifica se o parametro recebido sao informacoes do veiculo ou
+	# informacoes de registro da concessionaria
 	if (veiculo == "Sem veículos na concessionária!" or	
 		veiculo == "Veículo não registrado na concessionária!"):
 		print('\n{}\n'.format(veiculo))
