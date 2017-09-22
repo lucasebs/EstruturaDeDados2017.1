@@ -72,25 +72,78 @@ def verifica_existencia(c, chassi):
 			return False
 
 def sucesso(op):
+	'''
+	Function: 
+		sucesso : Exibe na tela mensagem de sucesso na operacao
+	Attributes: 
+		@param (op) (str) : String  de identificacao da operacao.
+			'a' :	Adicionar Veiculo
+			'r' :   Remover Veiculo
+	'''
+	# Verifica qual a operacao e imprime a respectiva mensagem de sucesso
 	if (op == "a"):
 		print("\nVEÍCULO ADICIONADO COM SUCESSO!\n")
 	elif (op == "r"):
 		print("\nVEÍCULO REMOVIDO COM SUCESSO!\n")	
 
 def captura_entrada(c, op):
+	'''
+	Function: 
+		captura_entrada : Captura dados da entrada padrao e retorna 
+			para as respectivas operacoes
+	Summary: 
+		chassi 	(int) 	: Numero de chassi do veiculo.
+		nome 	(str)	: Nome do veiculo correspondente ao chassi 
+			informado
+		ano 	(int)	: Ano de fabricacao do veiculo
+		marca 	(str)	: Marca do veiculo 
+		preco 	(float)	: Preco em Real do veiculo
+		verifica (bool) : Recebe retorno da funcao verifica_existencia()
+	Attributes: 
+		@param (c) (obj) : Objeto do tipo Concessionaria
+		@param (op) (str) : String  de identificacao da operacao.
+			'b' - Buscar Veiculo
+			'a' - Adicionar Veiculo
+			'r' - Remover Veiculo
+	Returns: 
+		chassi (int) : Retorna um numero do chassi lido da entrada 
+			padrao 
+		(chassi, nome, ano, marca, preco) (tupla ) : Retorna uma tupla
+			com dados lidos na entrada padrao 
+		True (bool) : Retorna valor booleano se veiculo já tiver sido
+			registrado na concessionaria
+	'''
+	# Recebe da entrada padrao numero do chassi do veiculo
 	chassi = int(input(" - Nº do Chassi do Veículo: "))
+	
+	# Verifica a operacao recebida como parametro. 
+	# Se operacao = busca ou remocao o unico dado lido é o numero do chassi.
 	if (op == 'b' or op == 'r'):
 		return chassi
+	# Se operacao = adicao, dados restantes sao lidos da entrada padrao
 	elif (op == 'a'):
+		# Recebe da funcao verifica_existencia() valor booleano
+		# True - Se veiculo ja está registrado na concessionaria
+		# False - Se veiculo não está registrado na concessionaria
 		verifica = verifica_existencia(c, chassi)
+		# Verifica se variavel 'verifica'
+		# True - Exibe na tela que veiculo já foi registrado e retorna 
+		# valor booleano para fora da funcao. 
 		if verifica:
 			print("Veículo já registrado na concessionária!")
 			return True
+		# Recebem da entrada padrao
+		# str com o nome do veiculo
 		nome = input(" - Nome: ")
+		# int com o ano de fabricacao do veiculo
 		ano = int(input(" - Ano: "))
+		# str com a marca do veiculo
 		marca = input(" - Marca: ")
+		# float com o preco em Real do veiculo
 		preco = float(input(" - Preço: "))
-
+		
+		# Retorna Tupla com os dados do veiculo para ser adicionado
+		# na concessionaria
 		return (chassi, nome, ano, marca, preco)
 
 def cabecalho(op):
