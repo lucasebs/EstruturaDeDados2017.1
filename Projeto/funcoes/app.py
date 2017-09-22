@@ -1,9 +1,22 @@
 from sys import platform
 from .bib import *
-import json
 import os
 
 def captura_menu():
+	'''
+	Function: 
+		captura_menu : Recebe da entrada padrao a opcao e retorna como
+			operacao
+	Summary: 
+		op (int) : Recebe da entrada padrao opcao do menu
+	Returns: 
+		op (int) : Retorna inteiro reference a operacao da opcao lida da
+			entrada principal, referente a opcao do menu
+	'''
+	# Recebe da entrada padrao opcao do menu
+	# 1 - Buscar Veiculo
+	# 2 - Adicinar Veiculo
+	# 3 - Remover Veiculo 
 	op = input(" - Informe a operação desejada: ")
 	return op
 
