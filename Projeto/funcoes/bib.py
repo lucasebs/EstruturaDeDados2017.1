@@ -1,6 +1,18 @@
 from .app import * 
 
 def menu():
+	'''
+	Function: 
+		menu : Menu Inicial do Pojeto Concessionaria	
+	Summary: 
+		menu_w (str) : String montando conteúdo estrutural do 
+		Menu iniciar exibindo as suas funções principais.
+		1 - Buscar Veiculo
+		2 - Adicinar Veiculo
+		3 - Remover Veiculo 
+	Returns: 
+		menu_w (str) 
+	'''
 	menu_w = ("\n------- Concesssionária Projeto ED IFPB -------\n\n"+
 				"-------------------- MENU ---------------------\n"+
 				" - 1 - : Buscar Veículo\n"+
@@ -10,6 +22,16 @@ def menu():
 	return menu_w
 
 def apresentacao():
+	'''
+	Function: 
+		apresentacao : Pagina inicial do Projeto Concessionaria.
+	Summary: 
+		apresentacao (str) : String montando conteúdo estrutural da 
+		página inicial do projeto, apresentando guia/dicas para o uso
+		do Projeto Concessionaria
+	Returns: 
+		apresentacao (str)
+	'''
 	apresentacao = ('  Bem vindo ao Sistema da Concesssionária Projeto ED IFPB\n\n'+
 					'  Dicas de Uso:\n'+
 					'	  - Para finalizar a execução do programa, basta digitar "sair"\n'+
@@ -24,7 +46,25 @@ def apresentacao():
 	return apresentacao
 
 def verifica_existencia(c, chassi):
+	'''
+	Function: 
+		verifica_existencia : Função que verifica se no registro da
+		concessionaria ja contem o veiculo passado como parametro.
+	Summary: 
+		vcl_busca (ojb) : Objeto do tipo veiculo.
+	Attributes: 
+		@param (c) (obj) : Objeto do tipo Concessionaria
+		@param (chassi) (int) : Inteiro contendo o número do chassi
+		do veiculo para verificacao
+	Returns: 
+		True (bool) : Se veiculo ja está registrado na concessionaria
+		False (bool) : Se veiculo não está registrado na concessionaria
+	'''
+	# Recebe da função buscar(), da lista veiculos da concessionaria c,
+	# um objeto do tipo veiculo, correspondente ao chassi passado como
+	# parametro. Ou recebe str informando que chassi não está nos registros
 	vcl_busca = c.veiculos.buscar(chassi)
+	# Verifica se vcl_busca não é do tipo str, sendo assim um obj
 	if type(vcl_busca) is not str :
 		if (vcl_busca.chassi == chassi):
 			return True
