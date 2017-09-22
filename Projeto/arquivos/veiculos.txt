@@ -1,0 +1,23 @@
+Chassi do carro: 1234
+Nome do carro: a
+Ano: 1
+Marca: a
+Preço: R$ 1
+-------------------------------
+Chassi do carro: 2345
+Nome do carro: b
+Ano: 2
+Marca: b
+Preço: R$ 2
+-------------------------------
+Chassi do carro: 3456
+Nome do carro: c
+Ano: 3
+Marca: c
+Preço: R$ 3.0
+-------------------------------
+Chassi do carro: 4567
+Nome do carro: d
+Ano: 4
+Marca: d
+Preço: R$ 4.0

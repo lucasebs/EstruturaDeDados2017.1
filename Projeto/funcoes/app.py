@@ -28,10 +28,12 @@ def busca_veiculo(c):
 def adiciona_veiculo(c):
 	cabecalho('a')
 	iv = captura_entrada(c, 'a')
-	c.veiculos.adicionar(iv[0], iv[1], iv[2], iv[3], iv[4])
-	c.quantidade_veiculos += 1
-	atualiza_arquivo(c)
-	sucesso('a')
+	if iv != True: 
+		c.veiculos.adicionar(int(iv[0]), iv[1], int(iv[2]), iv[3], float(iv[4]))
+		c.quantidade_veiculos += 1
+		atualiza_arquivo(c)
+		sucesso('a')
+	
 
 def remove_veiculo(c):
 	cabecalho('r')
@@ -44,8 +46,7 @@ def remove_veiculo(c):
 	else:
 		print(removido)
 
-def atualiza_arquivo(c):
-
+def atualiza_arquivo(c):	
 	arq = open('arquivos/veiculos.txt', 'w')	
 	if c.veiculos.listar() is not None:
 		arq.write(c.veiculos.listar())
@@ -63,3 +64,24 @@ def verifica_fim():
 	parada = input()	
 	if (parada.lower() == 'sair'):
 		return True
+
+def carrega_lista(c):
+	arq = open('arquivos/veiculos.txt', 'r')
+	linhas = arq.readlines()
+	result = ''
+	
+	for linha in linhas:
+		if "Chassi do carro: " in linha:
+			chassi = linha[17: -1]
+		elif "Nome do carro: " in linha:
+			nome = linha[15: -1]
+		elif "Ano: " in linha:
+			ano = linha[5: -1]	
+		elif "Marca: " in linha:
+			marca = linha[7: -1]
+		elif "Preço: R$ " in linha:
+			preco = linha[10: -1]
+			print(chassi,nome, ano, marca, preco)
+			c.veiculos.adicionar(int(chassi),nome, int(ano), marca, float(preco))
+	
+	arq.close()

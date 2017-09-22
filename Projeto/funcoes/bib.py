@@ -38,18 +38,18 @@ def sucesso(op):
 		print("\nVEÍCULO REMOVIDO COM SUCESSO!\n")	
 
 def captura_entrada(c, op):
-	chassi = input(" - Nº do Chassi do Veículo: ")
+	chassi = int(input(" - Nº do Chassi do Veículo: "))
 	if (op == 'b' or op == 'r'):
 		return chassi
 	elif (op == 'a'):
 		verifica = verifica_existencia(c, chassi)
 		if verifica:
-			print("VEÍCULO JÁ REGISTRADO NO SISTEMA!")
-			return
+			print("Veículo já registrado na concessionária!")
+			return True
 		nome = input(" - Nome: ")
-		ano = input(" - Ano: ")
+		ano = int(input(" - Ano: "))
 		marca = input(" - Marca: ")
-		preco = input(" - Preço: ")
+		preco = float(input(" - Preço: "))
 
 		return (chassi, nome, ano, marca, preco)
 
@@ -72,4 +72,4 @@ def imprime_veiculo(veiculo):
 		print("- Informações do Veículo ---------")
 		print("----------------------------------")
 		print('\n{}'.format(veiculo))
-		print("----------------------------------\n")
+		print("----------------------------------")

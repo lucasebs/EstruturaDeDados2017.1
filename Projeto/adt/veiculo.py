@@ -12,5 +12,5 @@ class Veiculo():
 				'Nome do carro: {}\n' .format(self.nome) +
 				'Ano: {}\n' .format(str(self.ano)) +
 				'Marca: {}\n' .format(str(self.marca)) +
-				'Preço: {}\n' .format(str(self.preco)))
+				'Preço: R$ {}\n' .format(str(self.preco)))
 		return result
