@@ -23,7 +23,6 @@ class Veiculos(object):
 			temp = temp.proximo_veiculo
 			if temp is not None:
 				result +="-------------------------------\n"
-
 		return result
 
 	def remover(self, chassi):
@@ -31,15 +30,33 @@ class Veiculos(object):
 			return "Sem veículos na concessionária!"
 
 		vclo_anterior = self.referencia
+
+		if vclo_anterior.info_veiculo.chassi == chassi and vclo_anterior.proximo_veiculo is not None:
+			self.referencia = vclo_anterior.proximo_veiculo
+			return True
+		elif vclo_anterior.info_veiculo.chassi == chassi:  
+			self.referencia = None 
+			return True
+
 		vclo_corrente = vclo_anterior.proximo_veiculo
 
-		while vclo_corrente is not None and vc:
+
+		while vclo_corrente.proximo_veiculo is not None and vclo_corrente.info_veiculo.chassi != chassi:
 			vclo_anterior = vclo_corrente
 			vclo_corrente = vclo_corrente.proximo_veiculo
 
-		if(vclo_corrente is not None):
+		if(vclo_corrente.proximo_veiculo is not None):
 			vclo_anterior.proximo_veiculo = vclo_corrente.proximo_veiculo
 			vclo_corrente.proximo_veiculo = None
+			return True
+
+		if vclo_corrente is None:
+			return "Veículo não registrado na concessionária!"
+
+		if vclo_corrente.info_veiculo.chassi == chassi:
+			vclo_corrente = None
+			vclo_anterior.proximo_veiculo = None
+			return True
 
 	def adicionar(self, chassi, nome, ano, marca, preco):
 		novo_vclo = No_vclo()
@@ -51,6 +68,10 @@ class Veiculos(object):
 
 		temp = self.referencia
 
+		if temp.proximo_veiculo is None:
+			temp.proximo_veiculo = novo_vclo
+			return
+
 		while temp.proximo_veiculo is not None:
 			temp = temp.proximo_veiculo
 
@@ -61,9 +82,16 @@ class Veiculos(object):
 			return "Sem veículos na concessionária!"
 
 		temp = self.referencia
+		if temp.proximo_veiculo is None and temp.info_veiculo.chassi == chassi:
+			return temp.info_veiculo
+		elif temp.proximo_veiculo is None and temp.info_veiculo.chassi != chassi:
+			return "Veículo não registrado na concessionária!"
 
 		while (temp is not None and temp.info_veiculo.chassi != chassi):
 			temp = temp.proximo_veiculo
 
-		return temp.info_veiculo	
+		if temp is None:
+			return "Veículo não registrado na concessionária!"
+
+		return temp.info_veiculo
 			

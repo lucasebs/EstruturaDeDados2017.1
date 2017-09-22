@@ -4,12 +4,19 @@ from adt.concessionaria import Concessionaria
 
 c1 = Concessionaria()
 
+limpar_tela()
+print(apresentacao())
+verifica_fim()
+
 while True: 
+
 	limpar_tela()
 
 	print(menu())
-	seleciona_menu(captura_menu(), c1)
+	estado = seleciona_menu(captura_menu(), c1)
 
-	if verifica_fim():
+	print("        Pressione Enter para continuar...")
+	if verifica_fim() or estado:
 		break
+	
 
