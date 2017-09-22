@@ -1,3 +1,4 @@
+from funcoes.app import *
 from funcoes.bib import *
 from adt.concessionaria import Concessionaria
 
@@ -15,7 +16,7 @@ while True:
 	print(menu())
 	estado = seleciona_menu(captura_menu(), c1)
 
-	print("        Pressione Enter para continuar...")
+	print("Pressione Enter para continuar...")
 	if verifica_fim() or estado:
 		break
 	

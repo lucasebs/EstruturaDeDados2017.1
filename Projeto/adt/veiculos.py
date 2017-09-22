@@ -93,5 +93,5 @@ class Veiculos(object):
 		if temp is None:
 			return "Veículo não registrado na concessionária!"
 
-		return temp.info_veiculo
+		return temp
 			
