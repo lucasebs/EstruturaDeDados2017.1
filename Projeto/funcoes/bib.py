@@ -45,6 +45,25 @@ def apresentacao():
 					'  Pressione Enter para iniciar...')
 	return apresentacao
 
+def cabecalho(op):
+	'''
+	Function: 
+		cabecalho : Exibe o cabecalho da operacao recebida como parametro
+	Attributes: 
+		@param (op) (str) : String  de identificacao da operacao.
+			'b' -	Buscar Veiculo
+			'a' -	Adicionar Veiculo
+			'r' -   Remover Veiculo
+	'''
+	# Verifica qual a operacao e imprime o respectivo cabecalho
+	if (op == 'b'):
+		print("\n---- BUSCAR VEÍCULO ---------------------------\n")
+	elif (op == 'a'):
+		print("\n---- ADICIONAR VEÍCULO ------------------------")
+		print("-- Preencha abaixo as informações do Veículo --\n")
+	elif (op == 'r'):
+		print("\n---- REMOVER VEÍCULO --------------------------\n")
+
 def verifica_existencia(c, chassi):
 	'''
 	Function: 
@@ -77,8 +96,8 @@ def sucesso(op):
 		sucesso : Exibe na tela mensagem de sucesso na operacao
 	Attributes: 
 		@param (op) (str) : String  de identificacao da operacao.
-			'a' :	Adicionar Veiculo
-			'r' :   Remover Veiculo
+			'a' -	Adicionar Veiculo
+			'r' -   Remover Veiculo
 	'''
 	# Verifica qual a operacao e imprime a respectiva mensagem de sucesso
 	if (op == "a"):
@@ -144,17 +163,7 @@ def captura_entrada(c, op):
 		
 		# Retorna Tupla com os dados do veiculo para ser adicionado
 		# na concessionaria
-		return (chassi, nome, ano, marca, preco)
-
-def cabecalho(op):
-	if (op == 'b'):
-		print("\n---- BUSCAR VEÍCULO ---------------------------\n")
-	elif (op == 'a'):
-		print("\n---- ADICIONAR VEÍCULO ------------------------")
-		print("-- Preencha abaixo as informações do Veículo --\n")
-	elif (op == 'r'):
-		print("\n---- REMOVER VEÍCULO --------------------------\n")
-		
+		return (chassi, nome, ano, marca, preco)		
 
 def imprime_veiculo(veiculo):
 	if (veiculo == "Sem veículos na concessionária!" or	
