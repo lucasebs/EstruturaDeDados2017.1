@@ -3,7 +3,12 @@ from .veiculo import Veiculo
 
 
 class Veiculos(object):
-	"""docstring for Veiculos"""
+	"""
+	Class:
+		Veiculos : Lista de veiculos registrados na concessionaria
+	Summary:
+		referencia (Obj) : Objeto do tipo No_vclo definindo inicio da lista
+	"""
 	def __init__(self):
 		self.referencia = None
 
