@@ -13,5 +13,6 @@ Resoluções da disciplina de Estrutura de Dados no período 2017.1 - Telemátic
     - Tipo Abstrato de Dados
 
   ### Lista 2
+    - Tipo Abstrato de Dados
     - Lista Encadeada
     - Lista Duplamente Encadeada
