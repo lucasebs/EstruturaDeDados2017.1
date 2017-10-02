@@ -32,9 +32,6 @@ class Retangulo:
 	def calcula_lados(self):
 		lado_a = math.sqrt((self.p2.x - self.p1.x)**2 + (self.p2.y - self.p1.y)**2)
 		lado_b = math.sqrt((self.p1.x - self.p3.x)**2 + (self.p1.y - self.p3.y)**2)
-
-		print(lado_a)
-		print(lado_b)
 				
 		self.lados = (lado_a, lado_b)		
 

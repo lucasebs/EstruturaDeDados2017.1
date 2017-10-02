@@ -2,9 +2,9 @@ from adt.ponto import Ponto
 from adt.retangulo import Retangulo
 
 p1 = Ponto(-3,3)
-p2 = Ponto(-3,-3)
-p3 = Ponto(0,-3)
-p4 = Ponto(0,3)
+p2 = Ponto(-3,0)
+p3 = Ponto(3,0)
+p4 = Ponto(3,3)
 
 r1 = Retangulo(p1, p2, p3, p4)
 
@@ -22,3 +22,6 @@ print(r2)
 print(r1.area())
 
 print(r2.area())
+
+r1.quadrado()
+r2.quadrado()
